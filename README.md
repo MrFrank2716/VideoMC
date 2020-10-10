@@ -4,6 +4,8 @@ This is a Bukkit plugin for playing videos on sheep.  It's a little janky since 
 
 Here's a video of it working, with *Bad Apple!!* of course: https://youtu.be/tO6sfku_1b8
 
+This was recorded on `mc.bapcraft.org`.  If you need help with something, message @treyzania#7744 on the Bapcraft discord: https://discord.gg/APZ388V
+
 ## Building
 
 It's set up with Maven so just run `mvn package` and it'll drop the jar file in `target/`.
@@ -16,21 +18,14 @@ You have to take the video and split it into a series of frames as single images
 
 ## TODO
 
-**In all honesty, someone else should probably do these.  I'll accept PRs, I'm just too lazy to write it myself.**
+**In all honesty, someone else should probably do these if they want to see them.  I'll accept PRs if someone does.  I just don't have a lot of reason to at the moment.**
 
 * Make it so you can stop videos.
-
 * More output back to the player
-
 * Play from URLs
-
   * If you're really feeling it then you could bundle the Python script with the jar and convert the video on the fly if ffmpeg and Python and PIL are present on the server.  Would need some limits to keep it from overloading the server.
-  
 * Maybe add support for playing note block sounds somehow?
-
 * Better handling of the region that sheep spawn in
-
 * Make it able to spawn sheep if there's not enough
-
   * Or instead do some event handler nonsense to encourage sheep to distribute evenly.  But don't make it too obvious.
 
