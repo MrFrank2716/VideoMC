@@ -11,7 +11,7 @@ commands:
     description: 'Main command for RottenPlayer to play videos.'
     aliases: []
     permission: rottenplayer.play
-    usage: '<x> <y> <z> <dir> <filename> [<scale>] [<delay>]'
+    usage: '<x> <z> <dir> <filename> [<scale>] [<delay>]'
 
 permissions:
   rottenplayer.play:
