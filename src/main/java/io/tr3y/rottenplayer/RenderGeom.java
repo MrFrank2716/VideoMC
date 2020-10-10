@@ -1,5 +1,6 @@
 package io.tr3y.rottenplayer;
 
+import org.bukkit.World;
 import org.bukkit.util.BoundingBox;
 
 /**
@@ -146,7 +147,7 @@ public class RenderGeom {
 			return null;
 		}
 
-		return new BoundingBox(xn, 0, zn, xm, 0, zm);
+		return new BoundingBox(xn, 0, zn, xm, 255, zm);
 	}
 
 }
