@@ -6,21 +6,21 @@ from PIL import Image
 
 def process_frame(img, w_samples, h_samples):
 	samples = []
-	
+
 	# Do some math to figure out how to choose our samples.
 	(w, h) = img.size
 	w_inc = w // w_samples
 	w_free = w - (w_inc * w_samples)
 	h_inc = h // h_samples
 	h_free = h - (h_inc * h_samples)
-	
+
 	# Now actually get them.
 	for y_samp in range(h_samples):
 		y_pos = h_inc * y_samp + (h_free / 2)
 		for x_samp in range(w_samples):
 			x_pos = w_inc * x_samp + (w_free / 2)
 			(r, g, b) = img.getpixel((x_pos, y_pos))
-			
+
 			# Now compute if it's a 1 or a 0.
 			avg = (r + g + b) / 3
 			samples.append(int(avg // 64))
@@ -40,7 +40,9 @@ with open(outfile, 'w') as f:
 	while True:
 		img_path = "image_%s.png" % (cur + 1)
 		try:
-			print('Processing:', img_path)
+			if cur > 1 and cur % 100 == 0:
+				print('Processed', cur, 'frames')
+
 			img = Image.open(img_path)
 			samps = process_frame(img, dimx, dimy)
 			samps.append('\n')
@@ -54,4 +56,3 @@ with open(outfile, 'w') as f:
 			break
 
 print('Done!')
-
