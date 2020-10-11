@@ -5,6 +5,9 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import io.tr3y.rottenplayer.color.ColorPalette;
+import io.tr3y.rottenplayer.color.ColorPolicy;
+
 public class RottenVideo {
 
 	public final int width, height;
@@ -40,13 +43,15 @@ public class RottenVideo {
 
 		int w = -1;
 		int h = -1;
+		ColorPolicy policy = null;
 
 		try {
 			w = Integer.parseInt(parts[0]);
 			h = Integer.parseInt(parts[1]);
-		} catch (NumberFormatException e) {
+			policy = ColorPalette.valueOf(parts[2]);
+		} catch (Exception e) {
 			s.close();
-			throw new IllegalArgumentException("malformed rottenvideo: bad dim format");
+			throw new IllegalArgumentException("malformed rottenvideo: bad dim format or color mode");
 		}
 
 		// Okay this is really bad. Java fucking sucks.
