@@ -13,6 +13,8 @@ import org.bukkit.entity.Sheep;
 import org.bukkit.scheduler.BukkitTask;
 import org.bukkit.util.BoundingBox;
 
+import io.tr3y.rottenplayer.color.ColorPolicy;
+
 public class PlayerWorker implements Runnable {
 
 	private World world;

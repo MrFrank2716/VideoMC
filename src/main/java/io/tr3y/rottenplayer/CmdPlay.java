@@ -14,6 +14,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitScheduler;
 import org.bukkit.scheduler.BukkitTask;
 
+import io.tr3y.rottenplayer.color.ColorPolicy;
+import io.tr3y.rottenplayer.color.GreyscaleColorPolicy;
+
 public class CmdPlay implements CommandExecutor {
 
 	private RottenPlayer plugin;

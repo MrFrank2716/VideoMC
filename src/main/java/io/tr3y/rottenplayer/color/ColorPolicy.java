@@ -1,4 +1,4 @@
-package io.tr3y.rottenplayer;
+package io.tr3y.rottenplayer.color;
 
 import org.bukkit.DyeColor;
 
