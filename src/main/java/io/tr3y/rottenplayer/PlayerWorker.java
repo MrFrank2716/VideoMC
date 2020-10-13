@@ -20,7 +20,6 @@ public class PlayerWorker implements Runnable {
 	private World world;
 	private RenderGeom geom;
 	private RottenVideo video;
-	private ColorPolicy policy;
 
 	private BukkitTask task;
 
@@ -28,11 +27,10 @@ public class PlayerWorker implements Runnable {
 	private HashMap<Sheep, SheepState> sheeps;
 	private boolean done;
 
-	public PlayerWorker(World w, RenderGeom g, RottenVideo v, ColorPolicy p) {
+	public PlayerWorker(World w, RenderGeom g, RottenVideo v) {
 		this.world = w;
 		this.geom = g;
 		this.video = v;
-		this.policy = p;
 		this.frame = 0;
 	}
 
@@ -67,6 +65,7 @@ public class PlayerWorker implements Runnable {
 	private void update() {
 
 		byte[] fb = video.getFrame(frame);
+		ColorPolicy policy = video.getColorPolicy();
 
 		for (Map.Entry<Sheep, SheepState> s : sheeps.entrySet()) {
 

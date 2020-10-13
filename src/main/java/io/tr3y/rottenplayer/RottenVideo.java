@@ -12,11 +12,15 @@ public class RottenVideo {
 
 	public final int width, height;
 	private final byte[][] frames;
+	
+	// I wish there was somewhere it made sense to have this instead of here.
+	private ColorPolicy colorPolicy;
 
-	private RottenVideo(int w, int h, byte[][] frames) {
+	private RottenVideo(int w, int h, byte[][] frames, ColorPolicy cpol) {
 		this.width = w;
 		this.height = h;
 		this.frames = frames;
+		this.colorPolicy = cpol;
 	}
 
 	public int getFrameCount() {
@@ -25,6 +29,10 @@ public class RottenVideo {
 
 	public byte[] getFrame(int n) {
 		return this.frames[n];
+	}
+	
+	public ColorPolicy getColorPolicy() {
+		return this.colorPolicy;
 	}
 
 	/**
@@ -89,7 +97,7 @@ public class RottenVideo {
 			fbs[i] = (byte[]) frames.get(i);
 		}
 
-		return new RottenVideo(w, h, fbs);
+		return new RottenVideo(w, h, fbs, policy);
 
 	}
 

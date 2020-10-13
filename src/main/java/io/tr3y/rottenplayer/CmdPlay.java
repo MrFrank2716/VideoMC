@@ -120,8 +120,7 @@ public class CmdPlay implements CommandExecutor {
 				RottenVideo vid = RottenVideo.fromInputStream(stream);
 
 				RenderGeom geom = new RenderGeom(vid.width, vid.height, wx, wz, wdir, vscale);
-				ColorPolicy pol = new GreyscaleColorPolicy();
-				PlayerWorker worker = new PlayerWorker(world, geom, vid, pol);
+				PlayerWorker worker = new PlayerWorker(world, geom, vid);
 
 				BukkitTask workerTask = sched.runTaskTimer(plugin, worker, 1, vperiod);
 				worker.setTask(workerTask);
