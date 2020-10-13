@@ -4,7 +4,7 @@ This is a Bukkit plugin for playing videos on sheep.  It's a little janky since 
 
 Here's a video of it working, with *Bad Apple!!* of course: https://youtu.be/tO6sfku_1b8
 
-This was recorded on `mc.bapcraft.org`.  If you need help with something, message @treyzania#7744 on the Bapcraft discord: https://discord.gg/APZ388V
+This was recorded on `mc.bapcraft.org`.  If you need help with something, message `@treyzania#7744` on the Bapcraft discord: https://discord.gg/8aUGZ9U
 
 ## Building
 
