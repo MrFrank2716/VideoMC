@@ -113,8 +113,8 @@ def process_frame(img, w_samples, h_samples, color_fn):
 		for x_samp in range(w_samples):
 			x_pos_part = w_inc * x_samp + (w_free / 2)
 			for (xo, yo) in SAMPLE_OFFS:
-				x_pos = x_pos_part + (w_inc * xo * SAMPLE_OFF_PROP)
-				y_pos = y_pos_part + (h_inc * yo * SAMPLE_OFF_PROP)
+				x_pos = x_pos_part + (w_inc * int(round(xo * SAMPLE_OFF_PROP)))
+				y_pos = y_pos_part + (h_inc * int(round(yo * SAMPLE_OFF_PROP)))
 				try:
 					rgb = img.getpixel((x_pos, y_pos))
 					cluster_samps.append(color_fn(rgb))
